@@ -11,15 +11,17 @@ from tensorboardX import SummaryWriter
 from utils import * 
 from model import * 
 from PIL import Image
+import numpy as np
+
 
 parser = argparse.ArgumentParser()
 # data I/O
 parser.add_argument('-i', '--data_dir', type=str,
-                    default='data', help='Location for the dataset')
+                    default='datasets/', help='Location for the dataset')
 parser.add_argument('-o', '--save_dir', type=str, default='models',
                     help='Location for parameter checkpoints and samples')
 parser.add_argument('-d', '--dataset', type=str,
-                    default='cifar', help='Can be either cifar|mnist')
+                    default='mnist', help='Can be either cifar|mnist')
 parser.add_argument('-p', '--print_every', type=int, default=50,
                     help='how many iterations between print statements')
 parser.add_argument('-t', '--save_interval', type=int, default=10,
